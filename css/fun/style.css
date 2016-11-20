@@ -1,0 +1,68 @@
+body {
+    background-color: #ECF0F5;
+}
+.login-form {
+    margin: auto;
+    margin-top: 100px;
+    width: 200px;
+}
+.api-key-form {
+    margin: auto;
+    margin-top: 10px;
+    width: 400px;
+}
+.character-select {
+    margin: 10px;
+    display: inline-block;
+}
+.side-panel {
+    background-color: #222D32;
+    padding: 10px;
+}
+.character-portrait {
+    width: 100%;
+}
+.hello {
+    color: #fff;
+    font-size: 16px;
+    padding: 0 10px;
+}
+.no-padding {
+    padding: 0;
+}
+.character-menu {
+    background-color: #1A2226;
+}
+.character-menu ul {
+    list-style-position: inside;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.character-menu ul a {
+    color: #eee;
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 20px;
+    border-left: 3px solid #1A2226;
+    text-decoration: none;
+}
+.character-menu ul a.active, .character-menu ul a:hover {
+    background-color: #222D32;
+    border-left: 3px solid #aaa;
+}
+.api-menu {
+    margin-bottom: 15px;
+}
+.api-menu a {
+    display: inline-block;
+    color: #444;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 5px;
+}
+.api-menu a:hover, .api-menu a.active {
+    background-color: #337AB7;
+    color: #eee;
+}
