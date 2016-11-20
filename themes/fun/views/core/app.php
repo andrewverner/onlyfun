@@ -1,19 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: dkhodakovskiy
+ * User: verner
  * Date: 20.11.16
- * Time: 1:24
- *
- * @var $character EveXMLCharacterSheet
- * @var $corporation EveXMLPublicCorporationSheet
- * @var $implant EveXMLCharacterImplant
+ * Time: 23:44
  */
 ?>
 
 <div class="row">
     <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 no-padding">
-        <?php $this->renderPartial('//core/leftPanel', ['character' => $character]) ?>
+        <?php $this->renderPartial('//core/leftPanel', ['character' => Yii::app()->user->character]) ?>
     </div>
     <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
         <div class="row">
@@ -240,8 +236,3 @@
         </div>
     </div>
 </div>
-
-<pre>
-    <?php print_r($corporation) ?>
-    <?php print_r($character) ?>
-</pre>

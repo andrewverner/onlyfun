@@ -18,3 +18,402 @@ Stack trace:
 #15 {main}
 ---
 2016/11/19 17:34:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fun.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2016/11/20 17:12:28 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fun.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2016/11/20 18:33:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "registration".' in /usr/share/nginx/html/fun/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('registration')
+#1 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/registration
+HTTP_REFERER=http://local.fun/
+---
+2016/11/20 18:33:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "registration".' in /usr/share/nginx/html/fun/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('registration')
+#1 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/registration
+HTTP_REFERER=http://local.fun/
+---
+2016/11/20 18:36:25 [warning] [application] Failed to set unsafe attribute "pasword" of "User".
+in /usr/share/nginx/html/fun/protected/controllers/SiteController.php (88)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 20:29:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "app".' in /usr/share/nginx/html/fun/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('app')
+#1 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/app
+---
+2016/11/20 20:29:47 [error] [php] Undefined variable: formModel (/usr/share/nginx/html/fun/themes/fun/views/site/app.php:31)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(869): SiteController->renderFile()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /usr/share/nginx/html/fun/protected/controllers/SiteController.php(130): SiteController->render()
+#3 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): SiteController->actionApp()
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(286): SiteController->runAction()
+#6 /usr/share/nginx/html/fun/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/app
+in /usr/share/nginx/html/fun/themes/fun/views/site/app.php (31)
+in /usr/share/nginx/html/fun/protected/controllers/SiteController.php (130)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 21:09:31 [error] [php] Trying to get property of non-object (/usr/share/nginx/html/fun/protected/controllers/SiteController.php:134)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(286): SiteController->runAction()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#5 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/app
+in /usr/share/nginx/html/fun/protected/controllers/SiteController.php (134)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 21:10:27 [error] [php] Trying to get property of non-object (/usr/share/nginx/html/fun/protected/controllers/SiteController.php:134)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(286): SiteController->runAction()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#5 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/app
+in /usr/share/nginx/html/fun/protected/controllers/SiteController.php (134)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 21:10:45 [error] [php] Trying to get property of non-object (/usr/share/nginx/html/fun/protected/controllers/SiteController.php:135)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(286): SiteController->runAction()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#5 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/app
+in /usr/share/nginx/html/fun/protected/controllers/SiteController.php (135)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 21:11:32 [error] [php] Trying to get property of non-object (/usr/share/nginx/html/fun/protected/controllers/SiteController.php:134)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(286): SiteController->runAction()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#5 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/app
+in /usr/share/nginx/html/fun/protected/controllers/SiteController.php (134)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 21:18:40 [error] [php] Invalid argument supplied for foreach() (/usr/share/nginx/html/fun/framework/base/CModel.php:395)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(286): SiteController->runAction()
+#2 /usr/share/nginx/html/fun/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#6 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/app
+in /usr/share/nginx/html/fun/protected/controllers/SiteController.php (134)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 21:28:42 [error] [exception.CHttpException.403] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:36
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('apps')
+#5 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/apps')
+#6 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#7 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/index.php/core/apps
+---
+2016/11/20 21:29:21 [error] [exception.CHttpException.403] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:36
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('apps')
+#5 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/apps')
+#6 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#7 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/index.php/core/apps
+---
+2016/11/20 21:29:34 [error] [exception.CHttpException.403] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:36
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('apps')
+#5 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/apps')
+#6 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#7 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/index.php/core/apps
+---
+2016/11/20 21:29:43 [error] [exception.CHttpException.403] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:36
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('apps')
+#5 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/apps')
+#6 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#7 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/index.php/core/apps
+---
+2016/11/20 21:29:47 [error] [exception.CHttpException.403] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:36
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('apps')
+#5 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/apps')
+#6 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#7 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/index.php/core/apps
+---
+2016/11/20 21:33:37 [error] [exception.CException] exception 'CException' with message 'Property "ApplicationForm.email" is not defined.' in /usr/share/nginx/html/fun/framework/base/CComponent.php:130
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/helpers/CHtml.php(2729): CComponent->__get('email')
+#1 /usr/share/nginx/html/fun/framework/web/helpers/CHtml.php(2452): CHtml::resolveValue(Object(ApplicationForm), 'email')
+#2 /usr/share/nginx/html/fun/framework/web/helpers/CHtml.php(1534): CHtml::activeInputField('text', Object(ApplicationForm), 'email', Array)
+#3 /usr/share/nginx/html/fun/framework/web/widgets/CActiveForm.php(792): CHtml::activeTextField(Object(ApplicationForm), 'email', Array)
+#4 /usr/share/nginx/html/fun/themes/fun/views/site/app.php(54): CActiveForm->textField(Object(ApplicationForm), 'email', Array)
+#5 /usr/share/nginx/html/fun/framework/web/CBaseController.php(126): require('/usr/share/ngin...')
+#6 /usr/share/nginx/html/fun/framework/web/CBaseController.php(95): CBaseController->renderInternal('/usr/share/ngin...', Array, true)
+#7 /usr/share/nginx/html/fun/framework/web/CController.php(869): CBaseController->renderFile('/usr/share/ngin...', Array, true)
+#8 /usr/share/nginx/html/fun/framework/web/CController.php(782): CController->renderPartial('app', Array, true)
+#9 /usr/share/nginx/html/fun/protected/controllers/SiteController.php(136): CController->render('app', Array)
+#10 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): SiteController->actionApp()
+#11 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#15 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('site/app')
+#16 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#17 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php/app
+---
+2016/11/20 21:47:52 [error] [php] Undefined property: WebCharacter::$corporationID (/usr/share/nginx/html/fun/protected/models/Application.php:115)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CBaseController.php(95): CoreController->renderInternal()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#2 /usr/share/nginx/html/fun/themes/fun/views/core/index.php(16): CoreController->renderPartial()
+#3 /usr/share/nginx/html/fun/framework/web/CBaseController.php(126): require()
+#4 /usr/share/nginx/html/fun/framework/web/CBaseController.php(95): CoreController->renderInternal()
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#6 /usr/share/nginx/html/fun/framework/web/CController.php(782): CoreController->renderPartial()
+#7 /usr/share/nginx/html/fun/protected/controllers/CoreController.php(31): CoreController->render()
+#8 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionIndex()
+#9 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /usr/share/nginx/html/fun/framework/web/CController.php(286): CoreController->runAction()
+#11 /usr/share/nginx/html/fun/framework/web/CController.php(265): CoreController->runActionWithFilters()
+#12 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CoreController->run()
+#13 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/core
+in /usr/share/nginx/html/fun/protected/models/Application.php (115)
+in /usr/share/nginx/html/fun/themes/fun/views/core/leftPanel.php (68)
+in /usr/share/nginx/html/fun/themes/fun/views/core/index.php (16)
+2016/11/20 21:47:54 [error] [php] Undefined property: WebCharacter::$corporationID (/usr/share/nginx/html/fun/protected/models/Application.php:115)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CBaseController.php(95): CoreController->renderInternal()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#2 /usr/share/nginx/html/fun/themes/fun/views/core/index.php(16): CoreController->renderPartial()
+#3 /usr/share/nginx/html/fun/framework/web/CBaseController.php(126): require()
+#4 /usr/share/nginx/html/fun/framework/web/CBaseController.php(95): CoreController->renderInternal()
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#6 /usr/share/nginx/html/fun/framework/web/CController.php(782): CoreController->renderPartial()
+#7 /usr/share/nginx/html/fun/protected/controllers/CoreController.php(31): CoreController->render()
+#8 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionIndex()
+#9 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /usr/share/nginx/html/fun/framework/web/CController.php(286): CoreController->runAction()
+#11 /usr/share/nginx/html/fun/framework/web/CController.php(265): CoreController->runActionWithFilters()
+#12 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CoreController->run()
+#13 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/core
+in /usr/share/nginx/html/fun/protected/models/Application.php (115)
+in /usr/share/nginx/html/fun/themes/fun/views/core/leftPanel.php (68)
+in /usr/share/nginx/html/fun/themes/fun/views/core/index.php (16)
+2016/11/20 21:57:10 [error] [php] Undefined variable: character (/usr/share/nginx/html/fun/themes/fun/views/core/apps.php:12)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#1 /usr/share/nginx/html/fun/framework/web/CController.php(782): CoreController->renderPartial()
+#2 /usr/share/nginx/html/fun/protected/controllers/CoreController.php(53): CoreController->render()
+#3 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(286): CoreController->runAction()
+#6 /usr/share/nginx/html/fun/framework/web/CController.php(265): CoreController->runActionWithFilters()
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CoreController->run()
+#8 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/core/apps
+in /usr/share/nginx/html/fun/themes/fun/views/core/apps.php (12)
+in /usr/share/nginx/html/fun/protected/controllers/CoreController.php (53)
+in /usr/share/nginx/html/fun/index.php (13)
+2016/11/20 22:04:06 [error] [php] Undefined property: WebCharacter::$corporationName (/usr/share/nginx/html/fun/themes/fun/views/core/leftPanel.php:46)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#1 /usr/share/nginx/html/fun/themes/fun/views/core/apps.php(14): CoreController->renderPartial()
+#2 /usr/share/nginx/html/fun/framework/web/CBaseController.php(126): require()
+#3 /usr/share/nginx/html/fun/framework/web/CBaseController.php(95): CoreController->renderInternal()
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(782): CoreController->renderPartial()
+#6 /usr/share/nginx/html/fun/protected/controllers/CoreController.php(54): CoreController->render()
+#7 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#8 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /usr/share/nginx/html/fun/framework/web/CController.php(286): CoreController->runAction()
+#10 /usr/share/nginx/html/fun/framework/web/CController.php(265): CoreController->runActionWithFilters()
+#11 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CoreController->run()
+#12 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/core/apps
+in /usr/share/nginx/html/fun/themes/fun/views/core/leftPanel.php (46)
+in /usr/share/nginx/html/fun/themes/fun/views/core/apps.php (14)
+in /usr/share/nginx/html/fun/protected/controllers/CoreController.php (54)
+2016/11/20 22:04:39 [error] [php] Undefined property: WebCharacter::$allianceID (/usr/share/nginx/html/fun/themes/fun/views/core/leftPanel.php:50)
+Stack trace:
+#0 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#1 /usr/share/nginx/html/fun/themes/fun/views/core/apps.php(14): CoreController->renderPartial()
+#2 /usr/share/nginx/html/fun/framework/web/CBaseController.php(126): require()
+#3 /usr/share/nginx/html/fun/framework/web/CBaseController.php(95): CoreController->renderInternal()
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(869): CoreController->renderFile()
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(782): CoreController->renderPartial()
+#6 /usr/share/nginx/html/fun/protected/controllers/CoreController.php(54): CoreController->render()
+#7 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(49): CoreController->actionApps()
+#8 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /usr/share/nginx/html/fun/framework/web/CController.php(286): CoreController->runAction()
+#10 /usr/share/nginx/html/fun/framework/web/CController.php(265): CoreController->runActionWithFilters()
+#11 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CoreController->run()
+#12 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /usr/share/nginx/html/fun/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/core/apps
+in /usr/share/nginx/html/fun/themes/fun/views/core/leftPanel.php (50)
+in /usr/share/nginx/html/fun/themes/fun/views/core/apps.php (14)
+in /usr/share/nginx/html/fun/protected/controllers/CoreController.php (54)
+2016/11/20 22:09:09 [error] [exception.CHttpException.404] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:61
+Stack trace:
+#0 [internal function]: CoreController->actionApp('5')
+#1 /usr/share/nginx/html/fun/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(CoreController), Array)
+#2 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(CoreController), Object(ReflectionMethod), Array)
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/app')
+#8 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/core/app/5
+---
+2016/11/20 22:12:12 [error] [exception.CHttpException.404] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:61
+Stack trace:
+#0 [internal function]: CoreController->actionApp('5')
+#1 /usr/share/nginx/html/fun/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(CoreController), Array)
+#2 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(CoreController), Object(ReflectionMethod), Array)
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/app')
+#8 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/core/app/5
+---
+2016/11/20 22:12:14 [error] [exception.CHttpException.404] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:61
+Stack trace:
+#0 [internal function]: CoreController->actionApp('5')
+#1 /usr/share/nginx/html/fun/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(CoreController), Array)
+#2 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(CoreController), Object(ReflectionMethod), Array)
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/app')
+#8 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/core/app/5
+---
+2016/11/20 22:12:27 [error] [exception.CHttpException.404] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:61
+Stack trace:
+#0 [internal function]: CoreController->actionApp('5')
+#1 /usr/share/nginx/html/fun/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(CoreController), Array)
+#2 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(CoreController), Object(ReflectionMethod), Array)
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/app')
+#8 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/core/app/5
+---
+2016/11/20 22:12:31 [error] [exception.CHttpException.404] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:61
+Stack trace:
+#0 [internal function]: CoreController->actionApp('5')
+#1 /usr/share/nginx/html/fun/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(CoreController), Array)
+#2 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(CoreController), Object(ReflectionMethod), Array)
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/app')
+#8 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/core/app/5
+---
+2016/11/20 22:14:25 [error] [exception.CHttpException.404] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:61
+Stack trace:
+#0 [internal function]: CoreController->actionApp('5')
+#1 /usr/share/nginx/html/fun/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(CoreController), Array)
+#2 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(CoreController), Object(ReflectionMethod), Array)
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/app')
+#8 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/core/app/5
+---
+2016/11/20 22:15:37 [error] [exception.CHttpException.404] exception 'CHttpException' in /usr/share/nginx/html/fun/protected/controllers/CoreController.php:61
+Stack trace:
+#0 [internal function]: CoreController->actionApp('5')
+#1 /usr/share/nginx/html/fun/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(CoreController), Array)
+#2 /usr/share/nginx/html/fun/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(CoreController), Object(ReflectionMethod), Array)
+#3 /usr/share/nginx/html/fun/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /usr/share/nginx/html/fun/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /usr/share/nginx/html/fun/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(282): CController->run('app')
+#7 /usr/share/nginx/html/fun/framework/web/CWebApplication.php(141): CWebApplication->runController('core/app')
+#8 /usr/share/nginx/html/fun/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#9 /usr/share/nginx/html/fun/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php/core/app/5
+---

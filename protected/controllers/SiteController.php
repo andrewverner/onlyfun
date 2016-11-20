@@ -38,6 +38,8 @@ class SiteController extends Controller
 
         $models = Character::model()->findAllByAttributes([
             'userID' => Yii::app()->user->id
+        ], [
+            'order' => 'keyID, characterName ASC'
         ]);
 
         $this->render('select', [
@@ -62,7 +64,7 @@ class SiteController extends Controller
                 $isCeo = ($corporation->ceoID == $id);
             }
         }
-        Yii::app()->user->setState('character', new WebCharacter($id, $isCeo));
+        Yii::app()->user->setState('character', new WebCharacter($character, $isCeo));
 
         $this->redirect(Yii::app()->createUrl('core'));
     }
@@ -71,6 +73,84 @@ class SiteController extends Controller
     {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
+    }
+
+    public function actionReg()
+    {
+        $formModel = new RegForm();
+
+        if ($data = Yii::app()->request->getPost('RegForm')) {
+            $formModel->setAttributes($data);
+            if ($formModel->validate()) {
+                $model = new User();
+                $model->setAttributes([
+                    'username' => $formModel->username,
+                    'password' => md5($formModel->passwd1),
+                    'email' => $formModel->email
+                ]);
+                $model->save();
+
+                $this->redirect(Yii::app()->createUrl('complete'));
+            }
+        }
+
+        $this->render('reg', ['model' => $formModel]);
+    }
+
+    public function actionComplete()
+    {
+        $this->render('complete');
+    }
+
+    public function actionApp()
+    {
+        $formModel = new ApplicationForm();
+
+        if ($data = Yii::app()->request->getPost('ApplicationForm')) {
+            $formModel->setAttributes($data);
+            if ($formModel->validate()) {
+                $accessValidator = new EveXMLAPIKeyValidator($formModel->keyID, $formModel->vCode);
+                if ($accessValidator->validate()) {
+                    $model = Application::model()->findByAttributes([
+                        'keyID' => $formModel->keyID,
+                        'vCode' => $formModel->vCode
+                    ]);
+
+                    if (!$model) $model = new Application();
+                    $model->setAttributes([
+                        'keyID' => $formModel->keyID,
+                        'vCode' => $formModel->vCode,
+                        'email' => $formModel->email,
+                        'datetime' => new CDbExpression('NOW()'),
+                        'status' => 0,
+                        'corporationID' => 98320999
+                    ]);
+                    $model->save();
+
+                    $this->redirect('cya');
+                } else {
+                    $formModel->addError('keyID', 'API key is not full');
+                }
+            }
+        }
+
+        $this->render('app', ['formModel' => $formModel]);
+    }
+
+    public function actionCya()
+    {
+        $this->render('cya');
+    }
+
+    public function actionError()
+    {
+        if($error=Yii::app()->errorHandler->error)
+        {
+            if(Yii::app()->request->isAjaxRequest)
+                echo $error['message'];
+            else
+                $this->render('error', $error);
+        }
     }
 
 }

@@ -7,7 +7,7 @@
  * Time: 3:18
  */
 
-class EveXMLCharacterImplant
+class EveXMLCharacterImplant extends EveType
 {
 
     public $implantName;

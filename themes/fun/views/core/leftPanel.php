@@ -65,13 +65,12 @@
     <?php endif; ?>
 </div>
 <div class="character-menu">
-    <?php $this->widget('zii.widgets.CMenu',array(
-        'items'=>array(
-            array('label'=>'Home', 'url'=>array('/site/index')),
-            array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-            array('label'=>'Contact', 'url'=>array('/site/contact')),
-            array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-            array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-        )
-    )); ?>
+    <?php $count = Application::newCount(); ?>
+    <?php $this->widget('zii.widgets.CMenu', [
+        'items' => [
+            ['label' => 'Notifications', 'url' => ['/core/notifications']],
+            ['label' => "Applications [$count]", 'url' => ['/core/apps'], 'visible' => Yii::app()->user->character->isCeo],
+            ['label' => 'Corp management', 'url' => ['/core/corp'], 'visible' => Yii::app()->user->character->isCeo],
+        ]
+    ]); ?>
 </div>

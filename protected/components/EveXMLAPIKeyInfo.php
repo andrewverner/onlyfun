@@ -23,6 +23,8 @@ class EveXMLAPIKeyInfo
         foreach ($xml->key->rowset[0] as $row) {
             $this->characters[] = new EveXMLAccountCharacter($row);
         }
+
+        return $this;
     }
 
 }

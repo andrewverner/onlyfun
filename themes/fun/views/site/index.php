@@ -43,7 +43,7 @@
         </div>
 
         <div>
-            <?php echo CHtml::link(Yii::t('link', 'registration'), Yii::app()->createUrl('registration')) ?> |
+            <?php echo CHtml::link(Yii::t('link', 'registration'), Yii::app()->createUrl('reg')) ?> |
             <?php echo CHtml::link(Yii::t('link', 'forgot password?'), Yii::app()->createUrl('remind')) ?>
         </div>
 

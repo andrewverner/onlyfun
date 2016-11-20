@@ -45,10 +45,15 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
+                'app' => 'site/app',
+                'cya' => 'site/cya',
+                'reg' => 'site/reg',
+                'complete' => 'site/complete',
                 'login' => 'site/index',
 			    'select' => 'site/select',
                 'logout' => 'site/logout',
                 'character/<id:\d+>' => 'site/character',
+                'core/app/<id:\d+>' => 'core/app',
 
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
