@@ -240,8 +240,3 @@
         </div>
     </div>
 </div>
-
-<pre>
-    <?php print_r($corporation) ?>
-    <?php print_r($character) ?>
-</pre>

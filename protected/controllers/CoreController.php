@@ -48,8 +48,8 @@ class CoreController extends Controller
         $models = Application::model()->findAll($cr);
 
         $this->render('apps', array(
-            'models' => $models,
-            'pages' => $pages,
+            'models'    => $models,
+            'pages'     => $pages,
             'character' => Yii::app()->user->character
         ));
     }
@@ -63,19 +63,17 @@ class CoreController extends Controller
 
         $apiKeyValidator = new EveXMLAPIKeyValidator($app->keyID, $app->vCode);
         $keyInfo = false;
-        $accountStatus = false;
-        if ($apiKeyValidator) {
+        if ($apiKeyValidator->validate()) {
             $account = new EveXMLAccount($app->keyID, $app->vCode);
             if ($account) {
                 $keyInfo = $account->apiKeyInfo();
-                $accountStatus = $account->accountStatus();
             }
         }
 
         $this->render('app', [
             'validator' => $apiKeyValidator,
-            'keyInfo' => $keyInfo,
-            'accountStatus' => $accountStatus
+            'keyInfo'   => $keyInfo,
+            'app'       => $app,
         ]);
     }
 

@@ -6,7 +6,7 @@
  * Date: 19.11.16
  * Time: 23:35
  */
-class EveXMLAccountCharacter
+class EveXMLAccountCharacter extends Character
 {
 
     public $name;

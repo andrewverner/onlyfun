@@ -49,4 +49,9 @@ class EveXMLAPIKeyValidator
         return (empty($this->errors));
     }
 
+    public function errors()
+    {
+        return (!empty($this->errors));
+    }
+
 }
