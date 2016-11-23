@@ -108,29 +108,6 @@ class EveXMLCharacterSheet extends EveXMLApi
                 }
             }
 
-            /*foreach ($xml->rowset as $rowset) {
-                switch (strval($rowset['name'])) {
-                    case 'jumpClones':
-                        $this->jumpClones = [];
-                        foreach ($rowset as $row) {
-                            $this->jumpClones[] = new EveXMLCharacterClone($row);
-                        }
-                        break;
-                    case 'jumpCloneImplants':
-                        $this->jumpCloneImplants = [];
-                        foreach ($rowset as $row) {
-                            $this->jumpCloneImplants[] = new EveXMLCharacterCloneImplant($row);
-                        }
-                        break;
-                    case 'implants':
-                        $this->jumpCloneImplants = [];
-                        foreach ($rowset as $row) {
-                            $this->jumpCloneImplants[] = new EveXMLCharacterCloneImplant($row);
-                        }
-                        break;
-                }
-            }*/
-
             return $this;
         }
     }

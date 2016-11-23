@@ -20,6 +20,11 @@ class EveXMLCharacter
         $this->_vCode = $vCode;
         $this->_characterID = $characterID;
     }
+    
+    public function getAccountBalance()
+    {
+        return new EveXMLAccountBalace($this->_keyID, $this->_vCode, $this->_characterID);
+    }
 
     public function getSheet()
     {
@@ -29,6 +34,21 @@ class EveXMLCharacter
     public function getBlueprints()
     {
         return new EveXMLCharacterBlueprints($this->_keyID, $this->_vCode, $this->_characterID);
+    }
+
+    public function getAssets()
+    {
+        //@todo
+    }
+
+    public function getBookmarks()
+    {
+        return new EveXMLCharacterBookmarks($this->_keyID, $this->_vCode, $this->_characterID);
+    }
+
+    public function getChatChannels()
+    {
+        return new EveXMLCharacterChatChannels($this->_keyID, $this->_vCode, $this->_characterID);
     }
 
 }
