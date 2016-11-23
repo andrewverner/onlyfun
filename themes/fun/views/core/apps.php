@@ -19,28 +19,30 @@
                 <h3>Applications</h3>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                <?php $this->widget('CLinkPager', array(
-                    'pages' => $pages,
-                )) ?>
-
+                
                 <?php if ($models) { ?>
-                    <table class="table table-hover">
-                    <?php foreach ($models as $model) : ?>
-                        <tr>
-                            <td><?php echo $model->id ?></td>
-                            <td><?php echo $model->datetime ?></td>
-                            <td><?php echo $model->email ?></td>
-                            <td><?php echo $model->keyID ?></td>
-                            <td><?php echo $model->vCode ?></td>
-                            <td>
-                                <?php echo CHtml::link('Details', Yii::app()->createUrl("core/app/{$model->id}"),[
-                                    'class' => 'btn btn-primary'
-                                ]) ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                    </table>
+                    <?php $this->widget('CLinkPager', array(
+                        'pages' => $pages,
+                    )) ?>
+
+                    <div class="row">
+                        <?php foreach ($models as $model) : ?>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 text-center">
+                            <?php echo CHtml::link(CHtml::image(
+                                EveHelper::image($model->characterID, 128),
+                                $model->character->characterName,
+                                [
+                                    'class' => 'img-thumbnail'
+                                ]
+                            ), Yii::app()->createUrl("pilot/{$model->characterID}")); ?><br />
+                            <?php echo $model->character->characterName ?>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?php $this->widget('CLinkPager', array(
+                        'pages' => $pages,
+                    )) ?>
                 <?php } else { ?>
                     <div class="alert alert-info">
                         No applications

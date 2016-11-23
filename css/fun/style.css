@@ -66,3 +66,35 @@ body {
     background-color: #337AB7;
     color: #eee;
 }
+.apps-table td {
+    font-size: 14px;
+    vertical-align: middle!important;
+}
+.api-pilot-menu a {
+    display: block;
+    padding: 5px 10px;
+    color: #333;
+    border-top: 1px solid #ddd;
+    border-left: 3px solid #fff;
+    text-decoration: none;
+}
+.api-pilot-menu a:hover, .api-pilot-menu a.active {
+    border-left: 3px solid #888;
+    background-color: #eee;
+}
+.bg-white {
+    background-color: #fff;
+}
+.pilot-name {
+    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+}
+.table-api {
+    width: 100%;
+    font-size: 14px;
+}
+.table-api td {
+    vertical-align: middle;
+    padding: 5px 10px;
+}

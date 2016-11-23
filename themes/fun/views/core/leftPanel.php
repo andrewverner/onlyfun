@@ -5,6 +5,7 @@
  * Date: 20.11.16
  * Time: 10:50
  */
+$character = Yii::app()->user->character;
 ?>
 
 <div class="character-menu">

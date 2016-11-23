@@ -47,7 +47,19 @@ class EveXMLAccount extends EveXMLApi
 
     public function characters()
     {
+        $this->url = '/account/Characters.xml.aspx';
 
+        if ($xml = $this->send()) {
+            $characters = [];
+            foreach ($xml->rowset->row as $row) {
+                $character = new stdClass();
+                $character->characterID = intval($row['characterID']);
+                $characters[] = $character;
+            }
+            return (empty($characters)) ? false : $characters;
+        }
+        else
+            return false;
     }
 
 }

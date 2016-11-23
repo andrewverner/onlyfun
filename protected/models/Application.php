@@ -11,9 +11,13 @@
  * @property integer $status
  * @property string $email
  * @property integer $corporationID
+ * @property integer $characterID
  */
 class Application extends CActiveRecord
 {
+
+    private $_character;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -30,13 +34,13 @@ class Application extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('keyID, vCode, datetime, email, corporationID', 'required'),
-			array('keyID, status, corporationID', 'numerical', 'integerOnly'=>true),
+			array('keyID, vCode, datetime, email, corporationID, characterID', 'required'),
+			array('keyID, status, corporationID, characterID', 'numerical', 'integerOnly'=>true),
 			array('vCode', 'length', 'max'=>64),
 			array('email', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, keyID, vCode, datetime, status, email, corporationID', 'safe', 'on'=>'search'),
+			array('id, keyID, vCode, datetime, status, email, corporationID, characterID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +68,7 @@ class Application extends CActiveRecord
 			'status' => 'Status',
 			'email' => 'Email',
 			'corporationID' => 'Corporation',
+			'characterID' => 'Character',
 		);
 	}
 
@@ -92,6 +97,7 @@ class Application extends CActiveRecord
 		$criteria->compare('status',$this->status);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('corporationID',$this->corporationID);
+		$criteria->compare('characterID',$this->characterID);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -109,12 +115,20 @@ class Application extends CActiveRecord
 		return parent::model($className);
 	}
 
-	public static function newCount()
+    public static function newCount()
     {
         return Application::model()->countByAttributes([
             'corporationID' => Yii::app()->user->character->corporationID,
             'status' => 0
         ]);
+    }
+
+    public function getCharacter()
+    {
+        if (!$this->_character) {
+            $this->_character = new EveXMLPublicCharacterInfo($this->characterID);
+        }
+        return $this->_character;
     }
 
 }

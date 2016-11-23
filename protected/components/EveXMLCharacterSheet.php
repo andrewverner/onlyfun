@@ -6,7 +6,7 @@
  * Date: 20.11.16
  * Time: 1:49
  */
-class EveXMLCharacterSheet extends EveXMLCharacter
+class EveXMLCharacterSheet extends EveXMLApi
 {
 
     public $homeStationID;
@@ -46,7 +46,11 @@ class EveXMLCharacterSheet extends EveXMLCharacter
 
     public function __construct($keyID, $vCode, $characterID)
     {
-        parent::__construct($keyID, $vCode, $characterID);
+        $this->params = http_build_query([
+            'keyID'         => $keyID,
+            'vCode'         => $vCode,
+            'characterID'   => $characterID
+        ]);
 
         $this->url = '/char/CharacterSheet.xml.aspx';
 

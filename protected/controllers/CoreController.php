@@ -47,11 +47,11 @@ class CoreController extends Controller
         $pages->applyLimit($cr);
         $models = Application::model()->findAll($cr);
 
-        $this->render('apps', array(
+        $this->render('apps', [
             'models'    => $models,
             'pages'     => $pages,
             'character' => Yii::app()->user->character
-        ));
+        ]);
     }
 
     public function actionApp($id)
@@ -75,6 +75,32 @@ class CoreController extends Controller
             'keyInfo'   => $keyInfo,
             'app'       => $app,
         ]);
+    }
+
+    public function actionPilot($id, $type = 'Sheet')
+    {
+        if (!Yii::app()->user->character->isCeo) throw new CHttpException(403);
+        $app = Application::model()->findByAttributes([
+            'characterID' => $id,
+            'corporationID' => Yii::app()->user->character->corporationID
+        ]);
+        if (!$app) throw new CHttpException(404);
+
+        $character = new EveXMLCharacter($app->keyID, $app->vCode, $app->characterID);
+
+        $data = [];
+        switch ($type) {
+            case 'Sheet':
+                $data['sheet'] = $character->getSheet();
+                break;
+            case 'Blueprints':
+                $data['blueprints'] = $character->getBlueprints();
+                break;
+        }
+
+        $this->render("pilot{$type}", array_merge($data, [
+            'app' => $app
+        ]));
     }
 
 }

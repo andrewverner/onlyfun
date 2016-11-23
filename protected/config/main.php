@@ -54,6 +54,8 @@ return array(
                 'logout' => 'site/logout',
                 'character/<id:\d+>' => 'site/character',
                 'core/app/<id:\d+>' => 'core/app',
+                'pilot/<id:\d+>' => 'core/pilot',
+                'pilot/<id:\d+>/<type:\w+>' => 'core/pilot',
 
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -92,6 +94,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+        'adminEmail'=>'webmaster@example.com',
+        'corpID'=>98482170,
 	),
 );

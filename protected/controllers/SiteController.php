@@ -111,22 +111,33 @@ class SiteController extends Controller
             if ($formModel->validate()) {
                 $accessValidator = new EveXMLAPIKeyValidator($formModel->keyID, $formModel->vCode);
                 if ($accessValidator->validate()) {
-                    $model = Application::model()->findByAttributes([
-                        'keyID' => $formModel->keyID,
-                        'vCode' => $formModel->vCode
-                    ]);
+                    $account = new EveXMLAccount($formModel->keyID, $formModel->vCode);
+                    $characters = $account->characters();
 
-                    if (!$model) $model = new Application();
-                    $model->setAttributes([
-                        'keyID' => $formModel->keyID,
-                        'vCode' => $formModel->vCode,
-                        'email' => $formModel->email,
-                        'datetime' => new CDbExpression('NOW()'),
-                        'status' => 0,
-                        'corporationID' => 98320999
-                    ]);
-                    $model->save();
+                    if ($characters) {
+                        foreach ($characters as $character) {
+                            $model = Application::model()->findByAttributes([
+                                'keyID'         => $formModel->keyID,
+                                'vCode'         => $formModel->vCode,
+                                'characterID'   => $character->characterID,
+                                'corporationID' => Yii::app()->params['corpID']
+                            ]);
 
+                            if (!$model) $model = new Application();
+                            $model->setAttributes([
+                                'keyID'         => $formModel->keyID,
+                                'vCode'         => $formModel->vCode,
+                                'email'         => $formModel->email,
+                                'characterID'   => $character->characterID,
+                                'datetime'      => new CDbExpression('NOW()'),
+                                'status'        => 0,
+                                'corporationID' => Yii::app()->params['corpID']
+                            ]);
+                            $model->save();
+                        }
+                    }
+                    else
+                        $formModel->addError('keyID', 'Error fetching characters list');
                     $this->redirect('cya');
                 } else {
                     $formModel->addError('keyID', 'API key is not full');

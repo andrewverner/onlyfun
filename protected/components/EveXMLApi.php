@@ -13,8 +13,15 @@ class EveXMLApi
     public $url;
     public $params;
 
+    public $simulate = false;
+
     public function send()
     {
+        if ($this->simulate) {
+            return simplexml_load_string($this->simulate());
+            exit;
+        }
+
         $ch = curl_init("{$this->host}{$this->url}?{$this->params}");
         curl_setopt($ch, CURLOPT_POST, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
