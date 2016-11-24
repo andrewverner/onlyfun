@@ -51,4 +51,9 @@ class EveXMLCharacter
         return new EveXMLCharacterChatChannels($this->_keyID, $this->_vCode, $this->_characterID);
     }
 
+    public function getCalendarEvents()
+    {
+        return new EveXMLCharacterUpcomingCalendarEvents($this->_keyID, $this->_vCode, $this->_characterID);
+    }
+
 }

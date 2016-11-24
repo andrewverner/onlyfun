@@ -96,7 +96,15 @@ class CoreController extends Controller
             case 'Blueprints':
                 $data['blueprints'] = $character->getBlueprints();
                 break;
-
+            case 'Bookmarks':
+                $data['bookmarks'] = $character->getBookmarks();
+                break;
+            case 'Chats':
+                $data['chats'] = $character->getChatChannels();
+                break;
+            case 'Events':
+                $data['events'] = $character->getCalendarEvents();
+                break;
         }
 
         $this->render("pilot{$type}", array_merge($data, [
