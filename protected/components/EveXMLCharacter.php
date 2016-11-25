@@ -56,4 +56,9 @@ class EveXMLCharacter
         return new EveXMLCharacterUpcomingCalendarEvents($this->_keyID, $this->_vCode, $this->_characterID);
     }
 
+    public function getContactList()
+    {
+        return new EveXMLCharacterContactList($this->_keyID, $this->_vCode, $this->_characterID);
+    }
+
 }

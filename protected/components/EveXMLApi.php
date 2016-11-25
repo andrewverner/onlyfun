@@ -35,4 +35,9 @@ class EveXMLApi
         return $xml->result;
     }
 
+    public function simulate()
+    {
+        return;
+    }
+
 }

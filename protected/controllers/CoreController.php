@@ -105,6 +105,12 @@ class CoreController extends Controller
             case 'Events':
                 $data['events'] = $character->getCalendarEvents();
                 break;
+            case 'Contacts':
+                $data['contacts'] = $character->getContactList();
+                break;
+            default:
+                throw new CHttpException(404);
+                break;
         }
 
         $this->render("pilot{$type}", array_merge($data, [

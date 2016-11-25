@@ -47,7 +47,6 @@
                 ['label' => 'Research', 'url' => ['/site/index']],
                 ['label' => 'Skills', 'url' => ['/site/index']],
                 ['label' => 'Standings', 'url' => ['/site/index']],
-                ['label' => 'Upcoming Calendar Events', 'url' => ['/site/index']],
                 ['label' => 'Wallet', 'url' => ['/site/index']],
             ]; ?>
             <?php foreach ($items as $item) {
