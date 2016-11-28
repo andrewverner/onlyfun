@@ -108,6 +108,12 @@ class CoreController extends Controller
             case 'Contacts':
                 $data['contacts'] = $character->getContactList();
                 break;
+            case 'Locations':
+                $data['locations'] = $character->getLocations();
+                break;
+            case 'Skills':
+                $data['skills'] = $character->getSkills();
+                break;
             default:
                 throw new CHttpException(404);
                 break;

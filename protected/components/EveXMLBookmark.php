@@ -24,17 +24,17 @@ class EveXMLBookmark
 
     public function __construct($row)
     {
-        $this->bookmarkID   = $row['bookmarkID'];
-        $this->creatorID    = $row['creatorID'];
-        $this->created      = $row['created'];
-        $this->itemID       = $row['itemID'];
-        $this->typeID       = $row['typeID'];
-        $this->locationID   = $row['locationID'];
-        $this->x            = $row['x'];
-        $this->y            = $row['y'];
-        $this->z            = $row['z'];
-        $this->memo         = $row['memo'];
-        $this->note         = $row['note'];
+        $this->bookmarkID   = intval($row['bookmarkID']);
+        $this->creatorID    = intval($row['creatorID']);
+        $this->created      = strval($row['created']);
+        $this->itemID       = intval($row['itemID']);
+        $this->typeID       = intval($row['typeID']);
+        $this->locationID   = intval($row['locationID']);
+        $this->x            = floatval($row['x']);
+        $this->y            = floatval($row['y']);
+        $this->z            = floatval($row['z']);
+        $this->memo         = strval($row['memo']);
+        $this->note         = strval($row['note']);
 
         return $this;
     }

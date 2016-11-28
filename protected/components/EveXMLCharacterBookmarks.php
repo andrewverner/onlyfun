@@ -11,6 +11,8 @@ class EveXMLCharacterBookmarks extends EveXMLApi
 {
 
     public $list;
+    public $creators;
+    public $locations;
 
     public function __construct($keyID, $vCode, $characterID)
     {
@@ -23,12 +25,25 @@ class EveXMLCharacterBookmarks extends EveXMLApi
         ]);
 
         if ($xml = $this->send()) {
+            $creators = [];
+            $locations = [];
             foreach ($xml->rowset->row as $row) {
                 $folderName = strval($row['folderName']);
                 foreach ($row->rowset->row as $row) {
-                    $this->list[$folderName][] = new EveXMLBookmark($row);
+                    $bookmark = new EveXMLBookmark($row);
+                    $this->list[$folderName][] = $bookmark;
+
+                    if ($bookmark->creatorID != 0 && !array_key_exists($bookmark->creatorID, $creators)) {
+                        $creators[$bookmark->creatorID] = new EveXMLPublicCharacterInfo($bookmark->creatorID);
+                    }
+
+                    if ($bookmark->locationID != 0 && !array_key_exists($bookmark->locationID, $locations)) {
+                        $locations[$bookmark->locationID] = SolarSystem::model()->findByPk($bookmark->locationID);
+                    }
                 }
             }
+            $this->creators = $creators;
+            $this->locations = $locations;
             return $this;
         }
         else

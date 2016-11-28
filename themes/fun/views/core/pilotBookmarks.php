@@ -31,11 +31,9 @@
                                     <thead>
                                         <tr>
                                             <td>bookmarkID</td>
-                                            <td>creatorID</td>
+                                            <td>creator</td>
                                             <td>created</td>
-                                            <td>itemID</td>
-                                            <td>typeID</td>
-                                            <td>locationID</td>
+                                            <td>location</td>
                                             <td>x</td>
                                             <td>y</td>
                                             <td>z</td>
@@ -47,11 +45,17 @@
                                         <?php foreach ($list as $bookmark) : ?>
                                             <tr>
                                                 <td><?php echo $bookmark->bookmarkID ?></td>
-                                                <td><?php echo $bookmark->creatorID ?></td>
+                                                <td>
+                                                    <?php if ($bookmark->creatorID) : ?>
+                                                        <?php echo $bookmarks->creators[$bookmark->creatorID]->characterName ?>
+                                                    <?php endif; ?>
+                                                </td>
                                                 <td><?php echo $bookmark->created ?></td>
-                                                <td><?php echo $bookmark->itemID ?></td>
-                                                <td><?php echo $bookmark->typeID ?></td>
-                                                <td><?php echo $bookmark->locationID ?></td>
+                                                <td>
+                                                    <?php if ($bookmark->locationID && isset($bookmarks->locations[$bookmark->locationID])) : ?>
+                                                        <?php echo $bookmarks->locations[$bookmark->locationID]->solarSystemName ?>
+                                                    <?php endif; ?>
+                                                </td>
                                                 <td><?php echo $bookmark->x ?></td>
                                                 <td><?php echo $bookmark->y ?></td>
                                                 <td><?php echo $bookmark->z ?></td>

@@ -61,4 +61,14 @@ class EveXMLCharacter
         return new EveXMLCharacterContactList($this->_keyID, $this->_vCode, $this->_characterID);
     }
 
+    public function getLocations()
+    {
+        return new EveXMLCharacterLocations($this->_keyID, $this->_vCode, $this->_characterID, true);
+    }
+
+    public function getSkills()
+    {
+        return new EveXMLCharacterSkills($this->_keyID, $this->_vCode, $this->_characterID);
+    }
+
 }
