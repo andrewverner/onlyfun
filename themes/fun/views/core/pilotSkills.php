@@ -25,23 +25,26 @@
                 <div class="panel-heading">Skills</div>
                 <div class="panel-body">
                     <?php foreach ($skills->list as $groupName => $list) : ?>
-                    <?php ksort($list) ?>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <?php echo $groupName ?>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <?php foreach ($list as $skill) : ?>
-                            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
-                                <?php echo $skill->level ?> <?php echo $skill->typeName ?>
+                        <?php if (!empty($list)) : ?>
+                        <?php ksort($list) ?>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h4><strong><?php echo $groupName ?></strong></h4>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
+                        </div>
+                        <div class="row">
+                            <?php foreach ($list as $skill) : ?>
+                                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+                                    <?php echo CHtml::image("/images/skills/level{$skill->level}.gif") ?>
+                                    <?php echo $skill->typeName ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
             </div>
-            <?php if ($skills->queue) : ?>
+            <?php if ($skills->queue && !empty($skills->queue->list)) : ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">Skill queue</div>
                     <div class="panel-body">

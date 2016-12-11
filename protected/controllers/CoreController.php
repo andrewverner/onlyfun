@@ -114,6 +114,9 @@ class CoreController extends Controller
             case 'Skills':
                 $data['skills'] = $character->getSkills();
                 break;
+            case 'Assets':
+                $data['assets'] = $character->getAssets();
+                break;
             default:
                 throw new CHttpException(404);
                 break;

@@ -36,11 +36,6 @@ class EveXMLCharacter
         return new EveXMLCharacterBlueprints($this->_keyID, $this->_vCode, $this->_characterID);
     }
 
-    public function getAssets()
-    {
-        //@todo
-    }
-
     public function getBookmarks()
     {
         return new EveXMLCharacterBookmarks($this->_keyID, $this->_vCode, $this->_characterID);
@@ -69,6 +64,11 @@ class EveXMLCharacter
     public function getSkills()
     {
         return new EveXMLCharacterSkills($this->_keyID, $this->_vCode, $this->_characterID);
+    }
+
+    public function getAssets()
+    {
+        return new EveXMLCharacterAssets($this->_keyID, $this->_vCode, $this->_characterID);
     }
 
 }
